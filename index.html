@@ -11,26 +11,26 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F8FAFC; /* Light off-white */
-            color: #1A202C; /* Dark gray for text */
+            background-color: #F8FAFC;
+            color: #1A202C;
         }
         h1, h2, h3 {
             font-family: 'Montserrat', sans-serif;
             color: #1A202C;
         }
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), /* Darkening overlay */
-                        url('https://placehold.co/2x2/000000/CCCCCC/png?text=') repeat, /* Subtle speckle pattern for stars */
-                        url('https://placehold.co/1920x800/2A2E43/FFFFFF/png?text=Explore+the+World\'s+Icons') center center / cover no-repeat; /* Main background image */
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+                        url('https://placehold.co/2x2/000000/CCCCCC/png?text=') repeat,
+                        url('https://placehold.co/1920x800/2A2E43/FFFFFF/png?text=Explore+the+World\'s+Icons') center center / cover no-repeat;
             color: white;
         }
         .gradient-button {
-            background-image: linear-gradient(to right, #EC4899, #D946EF); /* Pink-500 to Fuchsia-500 gradient */
+            background-image: linear-gradient(to right, #EC4899, #D946EF);
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         .gradient-button:hover {
-            background-image: linear-gradient(to right, #D946EF, #EC4899); /* Inverted gradient on hover */
+            background-image: linear-gradient(to right, #D946EF, #EC4899);
             transform: translateY(-2px) scale(1.02);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
@@ -44,17 +44,15 @@
         }
         .input-focus-ring:focus {
             outline: none;
-            border-color: #EC4899; /* Pink-500 */
-            box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.5); /* Pink-500 with opacity */
+            border-color: #EC4899;
+            box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.5);
         }
-
-        /* Side Panel Specific Styles */
         .side-panel {
             position: fixed;
             top: 0;
             right: 0;
             width: 100%;
-            max-width: 320px; /* Max width for larger screens */
+            max-width: 320px;
             height: 100%;
             background-color: #FFFFFF;
             box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
@@ -141,7 +139,7 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Popular Experiences Around the World</h2>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     <div class="bg-white rounded-xl overflow-hidden card-shadow">
-                        <img src="https://placehold.co/600x400/FBCFE8/EC4899/png?text=Eiffel+Tower+View" alt="Eiffel Tower" class="w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Eiffel Tower" class="w-full h-48 object-cover">
                         <div class="p-5">
                             <h3 class="font-bold text-xl mb-2">Eiffel Tower Summit Access</h3>
                             <p class="text-gray-600 text-sm mb-3">Paris, France</p>
@@ -155,7 +153,7 @@
                         </div>
                     </div>
                     <div class="bg-white rounded-xl overflow-hidden card-shadow">
-                        <img src="https://placehold.co/600x400/FBCFE8/EC4899/png?text=Louvre+Museum" alt="Louvre Museum" class="w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=600&q=80" alt="Louvre Museum" class="w-full h-48 object-cover">
                         <div class="p-5">
                             <h3 class="font-bold text-xl mb-2">Louvre Museum Timed Entry</h3>
                             <p class="text-gray-600 text-sm mb-3">Paris, France</p>
@@ -169,7 +167,7 @@
                         </div>
                     </div>
                     <div class="bg-white rounded-xl overflow-hidden card-shadow">
-                        <img src="https://placehold.co/600x400/FBCFE8/EC4899/png?text=Colosseum+Rome" alt="Colosseum" class="w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=600&q=80" alt="Colosseum" class="w-full h-48 object-cover">
                         <div class="p-5">
                             <h3 class="font-bold text-xl mb-2">Colosseum & Roman Forum Tour</h3>
                             <p class="text-gray-600 text-sm mb-3">Rome, Italy</p>
@@ -183,7 +181,7 @@
                         </div>
                     </div>
                     <div class="bg-white rounded-xl overflow-hidden card-shadow">
-                        <img src="https://placehold.co/600x400/FBCFE8/EC4899/png?text=Statue+of+Liberty" alt="Statue of Liberty" class="w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Statue of Liberty" class="w-full h-48 object-cover">
                         <div class="p-5">
                             <h3 class="font-bold text-xl mb-2">Statue of Liberty Cruise</h3>
                             <p class="text-gray-600 text-sm mb-3">New York, USA</p>
@@ -286,13 +284,13 @@
             openNavBtn.addEventListener('click', () => {
                 sidePanel.classList.add('open');
                 overlay.classList.add('open');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling body when panel is open
+                document.body.style.overflow = 'hidden';
             });
 
             closeNavBtn.addEventListener('click', () => {
                 sidePanel.classList.remove('open');
                 overlay.classList.remove('open');
-                document.body.style.overflow = ''; // Restore body scrolling
+                document.body.style.overflow = '';
             });
 
             overlay.addEventListener('click', () => {
@@ -301,7 +299,6 @@
                 document.body.style.overflow = '';
             });
 
-            // Close panel if any link inside is clicked (optional, for SPA behavior)
             const navLinks = sidePanel.querySelectorAll('a');
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
