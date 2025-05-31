@@ -7,11 +7,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F8FAFC;
+            background-color: #F9FAFB;
             color: #1A202C;
         }
         h1, h2, h3 {
@@ -20,18 +20,18 @@
         }
         .hero-section {
             background:
-                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                 url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1500&q=80') center center / cover no-repeat;
             color: white;
         }
         .gradient-button {
             background-image: linear-gradient(to right, #EC4899, #D946EF);
-            transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .gradient-button:hover {
             background-image: linear-gradient(to right, #D946EF, #EC4899);
-            transform: translateY(-2px) scale(1.02);
+            transform: translateY(-2px) scale(1.05);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         .card-shadow {
@@ -47,41 +47,9 @@
             border-color: #EC4899;
             box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.5);
         }
-        .side-panel {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 100%;
-            max-width: 320px;
-            height: 100%;
-            background-color: #FFFFFF;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-            transform: translateX(100%);
-            transition: transform 0.3s ease-in-out;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-        }
-        .side-panel.open {
-            transform: translateX(0);
-        }
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-            display: none;
-        }
-        .overlay.open {
-            display: block;
-        }
     </style>
 </head>
 <body class="antialiased">
-
     <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="flex items-center">
@@ -92,15 +60,14 @@
             </button>
         </nav>
     </header>
-
     <main>
         <section class="hero-section py-20 md:py-32 text-center">
             <div class="container mx-auto px-6 max-w-4xl">
                 <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-white">
-                    Unlock the World's Wonders. <br>Your Journey Starts Here.
+                    Explore the World's Wonders <br> Your Journey Awaits
                 </h1>
                 <p class="text-lg md:text-xl text-pink-100 mb-10">
-                    Discover hand-picked museum tickets, audio guides, and immersive tour packages in iconic cities worldwide.
+                    Discover curated museum tickets, audio guides, and immersive tours at iconic destinations.
                 </p>
                 <div class="bg-white p-2 rounded-full shadow-lg flex items-center justify-between max-w-xl mx-auto">
                     <input type="text" placeholder="Search for cities, attractions, or tours..." class="flex-grow p-3 rounded-full text-gray-800 focus:outline-none input-focus-ring">
@@ -110,205 +77,40 @@
                 </div>
             </div>
         </section>
-
-        <section id="how-it-works" class="py-16 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-10">How Cosmic Tickets & Audios Works</h2>
-                <div class="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
-                    <div class="p-6 rounded-lg text-center">
-                        <div class="text-5xl mb-4 text-orange-500">📍</div>
-                        <h3 class="font-bold text-xl mb-2">Discover Iconic Places</h3>
-                        <p class="text-gray-600">Browse a curated selection of tickets and tours in top destinations.</p>
-                    </div>
-                    <div class="p-6 rounded-lg text-center">
-                        <div class="text-5xl mb-4 text-purple-500">🎟️</div>
-                        <h3 class="font-bold text-xl mb-2">Book with Ease</h3>
-                        <p class="text-gray-600">Secure your spots with a few clicks, backed by our best price guarantee.</p>
-                    </div>
-                    <div class="p-6 rounded-lg text-center">
-                        <div class="text-5xl mb-4 text-green-500">🚀</div>
-                        <h3 class="font-bold text-xl mb-2">Experience & Enjoy</h3>
-                        <p class="text-gray-600">Receive instant confirmation and get ready for unforgettable moments.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experiences" class="py-16 bg-gray-50">
+        <section id="popular-experiences" class="py-16 bg-gray-50">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Popular Experiences Around the World</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Top Experiences</h2>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     <div class="bg-white rounded-xl overflow-hidden card-shadow">
                         <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Eiffel Tower" class="w-full h-48 object-cover">
                         <div class="p-5">
                             <h3 class="font-bold text-xl mb-2">Eiffel Tower Summit Access</h3>
-                            <p class="text-gray-600 text-sm mb-3">Paris, France</p>
-                            <div class="flex items-center text-sm text-yellow-600 mb-4">
-                                ★★★★★ (4,500 reviews)
-                            </div>
-                            <div class="flex justify-between items-center">
+                            <p class="text-gray-600 text-sm">Paris, France</p>
+                            <div class="flex justify-between items-center mt-4">
                                 <span class="font-bold text-xl text-pink-700">From $35</span>
                                 <button class="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-orange-600 transition-colors">Book Now</button>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white rounded-xl overflow-hidden card-shadow">
-                        <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=600&q=80" alt="Louvre Museum" class="w-full h-48 object-cover">
-                        <div class="p-5">
-                            <h3 class="font-bold text-xl mb-2">Louvre Museum Timed Entry</h3>
-                            <p class="text-gray-600 text-sm mb-3">Paris, France</p>
-                            <div class="flex items-center text-sm text-yellow-600 mb-4">
-                                ★★★★★ (8,200 reviews)
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="font-bold text-xl text-pink-700">From $20</span>
-                                <button class="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-orange-600 transition-colors">Book Now</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-xl overflow-hidden card-shadow">
-                        <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=600&q=80" alt="Colosseum" class="w-full h-48 object-cover">
-                        <div class="p-5">
-                            <h3 class="font-bold text-xl mb-2">Colosseum & Roman Forum Tour</h3>
-                            <p class="text-gray-600 text-sm mb-3">Rome, Italy</p>
-                            <div class="flex items-center text-sm text-yellow-600 mb-4">
-                                ★★★★★ (6,100 reviews)
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="font-bold text-xl text-pink-700">From $50</span>
-                                <button class="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-orange-600 transition-colors">Book Now</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-xl overflow-hidden card-shadow">
-                        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Statue of Liberty" class="w-full h-48 object-cover">
-                        <div class="p-5">
-                            <h3 class="font-bold text-xl mb-2">Statue of Liberty Cruise</h3>
-                            <p class="text-gray-600 text-sm mb-3">New York, USA</p>
-                            <div class="flex items-center text-sm text-yellow-600 mb-4">
-                                ★★★★★ (7,800 reviews)
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="font-bold text-xl text-pink-700">From $40</span>
-                                <button class="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-orange-600 transition-colors">Book Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-12">
-                    <button class="gradient-button text-white font-bold py-3 px-8 rounded-full text-lg">
-                        View All Experiences
-                    </button>
+                    <!-- Additional experience cards -->
                 </div>
             </div>
         </section>
-
-        <section id="testimonials" class="py-16 bg-white">
-            <div class="container mx-auto px-6 text-center max-w-3xl">
-                <h2 class="text-3xl md:text-4xl font-bold mb-10">What Travelers Are Saying</h2>
-                <div class="bg-pink-50 p-8 rounded-xl shadow-lg">
-                    <p class="text-lg italic text-gray-700 mb-6">
-                        "Cosmic Tickets & Audios made planning our Rome trip incredibly easy. The Colosseum tour was perfectly organized, and the audio guide added so much depth!"
-                    </p>
-                    <p class="font-semibold text-pink-700">- Sarah L., New York</p>
-                    <div class="text-yellow-500 text-xl mt-2">★★★★★</div>
-                </div>
-            </div>
-        </section>
-
         <section id="cta" class="py-20 bg-fuchsia-700 text-white text-center">
             <div class="container mx-auto px-6 max-w-4xl">
-                <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-                    Ready to Explore?
+                <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                    Start Your Adventure
                 </h2>
-                <p class="text-lg md:text-xl text-pink-100 mb-10">
-                    Find your next adventure and book with confidence today. Unforgettable memories await.
-                </p>
                 <button class="gradient-button text-white font-bold py-4 px-10 rounded-full text-xl">
-                    Start Your Adventure Now
+                    Explore Now
                 </button>
             </div>
         </section>
     </main>
-
     <footer class="bg-gray-800 text-white py-10">
-        <div class="container mx-auto px-6 text-center text-gray-300">
-            <div class="mb-4">
-                <img src="https://www.cosmic-tickets-audios.com/assets/logocosmic.png" alt="Cosmic Tickets & Audios Logo" class="h-10 md:h-12 mx-auto">
-            </div>
-            <div class="flex justify-center space-x-6 mb-4 text-sm">
-                <a href="#" class="hover:text-white">Privacy Policy</a>
-                <a href="#" class="hover:text-white">Terms of Service</a>
-                <a href="#" class="hover:text-white">Contact Us</a>
-            </div>
-            <p class="text-sm">&copy; 2025 Cosmic Tickets & Audios. All rights reserved.</p>
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Cosmic Tickets & Audios. All rights reserved.</p>
         </div>
     </footer>
-
-    <div id="side-panel" class="side-panel">
-        <div class="flex justify-between items-center p-6 border-b border-gray-200">
-            <h3 class="text-xl font-bold text-gray-800">Explore Categories</h3>
-            <button id="close-nav-btn" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
-        </div>
-        <nav class="flex-1 p-6 space-y-4">
-            <a href="#" class="block text-gray-700 hover:text-pink-600 font-medium text-lg">Most Popular</a>
-            <a href="#" class="block text-gray-700 hover:text-pink-600 font-medium text-lg">Tickets</a>
-            <a href="#" class="block text-gray-700 hover:text-pink-600 font-medium text-lg">Audio Guides</a>
-            <a href="#" class="block text-gray-700 hover:text-pink-600 font-medium text-lg">Tickets with Audio Guides</a>
-            <a href="#" class="block text-gray-700 hover:text-pink-600 font-medium text-lg">Museum Tours</a>
-            <a href="#" class="block text-gray-700 hover:text-pink-600 font-medium text-lg">Walking Tours</a>
-            <a href="#" class="block text-gray-700 hover:text-pink-600 font-medium text-lg">Boat Tours</a>
-            <div class="mt-6 pt-4 border-t border-gray-200">
-                <label for="country-select" class="block text-gray-700 font-medium mb-2">Select Country:</label>
-                <select id="country-select" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-transparent text-gray-800">
-                    <option value="">Choose a Country</option>
-                    <option value="usa">United States</option>
-                    <option value="france">France</option>
-                    <option value="italy">Italy</option>
-                    <option value="uk">United Kingdom</option>
-                    <option value="germany">Germany</option>
-                    </select>
-            </div>
-        </nav>
-    </div>
-
-    <div id="overlay" class="overlay"></div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const openNavBtn = document.getElementById('open-nav-btn');
-            const closeNavBtn = document.getElementById('close-nav-btn');
-            const sidePanel = document.getElementById('side-panel');
-            const overlay = document.getElementById('overlay');
-
-            openNavBtn.addEventListener('click', () => {
-                sidePanel.classList.add('open');
-                overlay.classList.add('open');
-                document.body.style.overflow = 'hidden';
-            });
-
-            closeNavBtn.addEventListener('click', () => {
-                sidePanel.classList.remove('open');
-                overlay.classList.remove('open');
-                document.body.style.overflow = '';
-            });
-
-            overlay.addEventListener('click', () => {
-                sidePanel.classList.remove('open');
-                overlay.classList.remove('open');
-                document.body.style.overflow = '';
-            });
-
-            const navLinks = sidePanel.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    sidePanel.classList.remove('open');
-                    overlay.classList.remove('open');
-                    document.body.style.overflow = '';
-                });
-            });
-        });
-    </script>
-
 </body>
 </html>
